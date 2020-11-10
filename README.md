@@ -27,7 +27,7 @@ TESTNET_DEPLOY_PRIVATE_KEY=99B3C12287537E38C90A9219D4CB074A89A16E9CDB20BF85728EB
 Update the `ProviderUrl` with the ip:port on which the edgeware-node is running. By default edgeware node runs on 9933 port so kindly set the variable to `http://127.0.0.1:9933` else you will receive the following error: `Error: Invalid JSON RPC response: ""`
 
 
-Once everything is setup run:
+Once everything is setup run the following to deploy stakr contracts on local chain:
 ```
 cd vendor/dtrade-contracts
 yarn install 
