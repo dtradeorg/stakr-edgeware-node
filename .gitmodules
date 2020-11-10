@@ -2,3 +2,8 @@
 	path = vendor/frontier
 	url = https://github.com/hicommonwealth/frontier.git
 	branch = master
+
+[submodule "vendor/dtrade-contracts"]
+	path = vendor/dtrade-contracts
+	url = https://github.com/dtradeorg/dtrade-contracts.git
+	branch = main
