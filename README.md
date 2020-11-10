@@ -1,72 +1,35 @@
-# edgeware-node
+# stakr-edgeware-node
 
-[Edgeware](https://edgewa.re) is an:
-- On-chain Governed,
-- Proof-of-Stake (PoS) Blockchain
-- with a WASM Runtime.
-
-## For node operators, validators, and other users
-
-A getting started guide can be found at our [Github
-Wiki](https://github.com/hicommonwealth/edgeware-node/wiki), including
-guides for running a node, validating, and setting up basic monitoring
-tools to keep your node online.
-
-For more details about the project, visit the Edgeware website, or
-check out the [blog](https://blog.edgewa.re) or
-[Twitter](https://twitter.com/heyedgeware). Finally, for discussion and
-governance, campaigns and proposals can be found on
-[Commonwealth](https://commonwealth.im).
-
-## For developers
+This repo houses the codebase for running stakr on edgeware node. Its forked from frontier branch of edgeware-node. 
 
 ### Quickstart
-
 If your device is clean (such as a fresh cloud VM) you can use this
 script for an automated setup:
-
 ```
 ./setup.sh
 ```
 
-Otherwise, proceed with the full instructions below.
+The script will automatically compile the edgeware node and install all dependencies. The script also pulls the submodules including both frontier branch from `parity` as well as stakr protocol contracts from the `dtrade-contracts`
+ 
 
-### Manual setup
-
-Install system dependencies:
-
-Linux:
+To start up the Edgeware node in development mode:
 ```
-sudo apt install cmake pkg-config libssl-dev git clang libclang-dev
+./target/release/edgeware --dev
 ```
 
-Mac:
-```
-brew install cmake pkg-config openssl git llvm
-```
-
-Install Edgeware dependencies:
+To deploy the dtrade contracts on the local edgeware chain first specify `DEPLOY_PRIVATE_KEY`  and `TESTNET_DEPLOY_PRIVATE_KEY` in .env with the private key of the account that you wish to use for deploying the contracts. Also update the REACT_APP_ADDRESS_RESOLVER_ADDRESS 
 
 ```
-curl https://sh.rustup.rs -sSf | sh
-rustup update stable
-rustup update nightly
-rustup target add wasm32-unknown-unknown --toolchain nightly
-cargo install --git https://github.com/alexcrichton/wasm-gc
+DEPLOY_PRIVATE_KEY=99B3C12287537E38C90A9219D4CB074A89A16E9CDB20BF85728EBD97C343E342
+TESTNET_DEPLOY_PRIVATE_KEY=99B3C12287537E38C90A9219D4CB074A89A16E9CDB20BF85728EBD97C343E342
 ```
 
-Build Edgeware:
+Update the `ProviderUrl` with the ip:port on which the edgeware-node is running. By default edgeware node runs on 9933 port so kindly set the variable to `http://127.0.0.1:9933` else you will receive the following error: `Error: Invalid JSON RPC response: ""`
 
-```
-cargo build --release
-```
 
-Ensure you have a fresh start if updating from another version:
+Once everything is setup run:
 ```
-./scripts/purge-chain.sh beresheet
-```
-
-To start up the Edgeware node and connect to the Beresheet testnet, run:
-```
-./target/release/edgeware --chain=beresheet --name <INSERT_NAME>
+cd vendor/dtrade-contracts
+yarn install 
+node scripts/deploy deploy -n local -d scripts/deploy/chain_config/local -g 8
 ```
