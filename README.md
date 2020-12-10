@@ -1,3 +1,18 @@
+![Frame 362](https://user-images.githubusercontent.com/74007432/101769771-e8ff0d00-3b00-11eb-8e46-339eec3095ff.png)
+
+<p align="center"
+
+<!---[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/AcalaNetwork/Acala/Test?label=Actions&logo=github)](https://github.com/dtradeorg/stakr-edgeware-node/actions/new)
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/AcalaNetwork/Acala)](https://github.com/AcalaNetwork/Acala/tags)
+[![Substrate version](https://img.shields.io/badge/Substrate-2.0.0-brightgreen?logo=Parity%20Substrate)](https://substrate.dev/)
+[![GitHub license](https://img.shields.io/github/license/dtradeorg/stakr-edgeware-node?color=gree)](https://github.com/dtradeorg/stakr-edgeware-node/blob/edgeware-frontier/LICENSE) --->
+[![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FAcalaNetwork)](https://twitter.com/dtradeorg)
+[![Discord](https://img.shields.io/badge/Discord-gray?logo=discord)](https://discord.com/invite/KwCFQz3zTp)
+[![Medium](https://img.shields.io/badge/Medium-gray?logo=medium)](https://medium.com/dtrade)
+
+</p>
+
+
 # stakr-edgeware-node
 
 This repo houses the codebase for running stakr on edgeware node. Its forked from frontier branch of edgeware-node. 
