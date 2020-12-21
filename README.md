@@ -12,7 +12,7 @@
 
 </p>
 
-# s-edgeware-node
+# Contracts-deployment-edgeware-node
 
 This repo houses the codebase for running the multi-collateral staking platform & synthetic asset exchange on the edgeware node.
 
